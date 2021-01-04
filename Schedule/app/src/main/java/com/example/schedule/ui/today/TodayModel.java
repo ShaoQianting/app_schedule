@@ -1,14 +1,14 @@
-package com.example.schedule.ui.home;
+package com.example.schedule.ui.today;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class TodayModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public TodayModel() {
         mText = new MutableLiveData<>();
         mText.setValue("");
     }
