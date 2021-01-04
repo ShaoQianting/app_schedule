@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/lamp"
+        android:icon="@drawable/ic_lamp_foreground"
+        android:title="@string/action_lamp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/morehorize"
+        android:icon="@drawable/ic_morehorize_foreground"
+        android:title="@string/action_settings"
+        app:showAsAction="always" />
+
+
+</menu>
