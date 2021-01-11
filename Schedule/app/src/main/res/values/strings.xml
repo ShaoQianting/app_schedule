@@ -11,4 +11,12 @@
     <string name="menu_home">清单</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="btn_enter">进入首页</string>
+    <string name="menu_everyday">每日计划</string>
+    <string name="menu_today">我的一天</string>
+    <string name="menu_importance">重要</string>
+    <string name="menu_tasks">每日计划</string>
+    <string name="menu_addNewList">新建清单</string>
+    <string name="menu_addNewTask">添加任务</string>
 </resources>

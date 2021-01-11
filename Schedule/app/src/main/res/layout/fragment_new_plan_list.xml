@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.today.TodayFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AFEEEE"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_everyday"
+                android:textColor="#008B8B"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/today_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1月4日 星期一"
+                android:textColor="#008B8B"
+                android:textSize="25sp" />
+        </LinearLayout>
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list"
+    android:name="com.example.schedule.NewPlan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    app:layoutManager="LinearLayoutManager"
+    tools:context=".NewPlan"
+    tools:listitem="@layout/fragment_new_plan" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

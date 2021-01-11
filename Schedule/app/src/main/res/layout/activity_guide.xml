@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.guide.GuideActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/guide_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.viewpager.widget.ViewPager>
+    <LinearLayout
+        android:id="@+id/guide_ll_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal">
+    </LinearLayout>
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/guide_ib_start"-->
+<!--        android:layout_width="81dp"-->
+<!--        android:layout_height="32dp"-->
+<!--        android:layout_above="@+id/guide_ll_point"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="@string/btn_enter"-->
+<!--        android:visibility="gone" />-->
+
+    <Button
+        android:id="@+id/guide_ib_start"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/guide_ll_point"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_enter"
+        android:visibility="gone" />
+
+</RelativeLayout>
