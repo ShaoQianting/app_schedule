@@ -8,10 +8,12 @@
             android:id="@+id/nav_today"
             android:icon="@mipmap/ic_sun_foreground"
             android:title="@string/menu_home" />
+
         <item
             android:id="@+id/nav_importance"
             android:icon="@mipmap/ic_important_foreground"
             android:title="@string/menu_importance" />
+
         <item
             android:id="@+id/nav_plan"
             android:icon="@mipmap/ic_schedule2_foreground"

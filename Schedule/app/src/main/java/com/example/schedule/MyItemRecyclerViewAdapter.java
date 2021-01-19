@@ -20,6 +20,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     private final List<DummyItem> mValues;
 
     public MyItemRecyclerViewAdapter(List<DummyItem> items) {
+
         mValues = items;
     }
 
@@ -39,6 +40,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     @Override
     public int getItemCount() {
+
         return mValues.size();
     }
 
@@ -57,6 +59,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
         @Override
         public String toString() {
+
             return super.toString() + " '" + mContentView.getText() + "'";
         }
     }

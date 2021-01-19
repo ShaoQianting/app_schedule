@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.schedule.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,24 +8,25 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.dao.UserDaoImp;
+
+import com.example.schedule.MainActivity;
+import com.example.schedule.R;
+import com.example.schedule.userdao.UserDaoImp;
+import com.example.schedule.po.User;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    private DBOpenHelper mDBOpenHelper;
+
     private EditText et_User, et_Psw;
     private CheckBox cb_rmbPsw;
     private String userName;
@@ -42,7 +43,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         initView();//初始化界面
-        mDBOpenHelper = new DBOpenHelper(this);
         userDaoImp = new UserDaoImp(this);
         SharedPreferences sp = getSharedPreferences("user_mes", MODE_PRIVATE);
         editor = sp.edit();
@@ -81,21 +81,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     ArrayList<User> data = userDaoImp.findAll();
                     boolean match = false;
                     boolean match2 = false;
+                    System.out.println(data.size());
                     for (int i = 0; i < data.size(); i++) {
                         User user = data.get(i);
-                        if ((name.equals(user.getName()) && password.equals(user.getPassword()))||
+
+                        if ((name.equals(user.getUser_name()) && password.equals(user.getPassword()))||
                                 (name.equals(user.getEmail())&&password.equals(user.getPassword()))||
-                                (name.equals(user.getPhonenum())&&password.equals(user.getPassword()))) {
-                            userName = user.getName();
+                                (name.equals(user.getPhone_num())&&password.equals(user.getPassword()))) {
+                            userName = user.getUser_name();
                             match = true;
                             if(cb_rmbPsw.isChecked()){
                                 editor.putBoolean("flag",true);
-                                editor.putString("user",user.getName());
+                                editor.putString("user_id",Integer.toString(user.getId()));
+                                editor.putString("user",user.getUser_name());
                                 editor.putString("psw",user.getPassword());
+                                editor.putBoolean("is_login",true);
                                 editor.apply();
                                 match2 = true;
                             }else {
-                                editor.putString("user",user.getName());
+                                editor.putString("user",user.getUser_name());
                                 editor.putString("psw","");
 //                                editor.clear();
                                 editor.apply();
@@ -121,7 +125,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     sleep(2000);//2秒 模拟登录时间
                                     String user_name = userName;
                                     Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);//设置自己跳转到成功的界面
-
                                     //intent1.putExtra("user_name",user_name);
                                     startActivity(intent1);
                                     finish();

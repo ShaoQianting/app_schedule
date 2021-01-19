@@ -14,6 +14,7 @@ public class ImportanceViewModel extends ViewModel {
     }
 
     public LiveData<String> getText() {
+
         return mText;
     }
 }

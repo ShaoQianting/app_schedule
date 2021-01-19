@@ -1,41 +1,40 @@
 package com.example.schedule.po;
 
 public class User {
-    private String name;
+    private int id;
+    private String user_name;
     private String password;
     private String email;
-    private String phonenum;
+    private String phone_num;
+    private String item_sets;
 
-    public User(String name, String password, String email, String phonenum) {
-        this.name = name;
+    public User(int id, String user_name, String password, String email, String phone_num, String item_sets) {
+        this.id = id;
+        this.user_name = user_name;
         this.password = password;
         this.email = email;
-        this.phonenum = phonenum;
+        this.phone_num = phone_num;
+        this.item_sets = item_sets;
     }
 
+    public User() {
 
-    public String getEmail() {
-        return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public int getId() {
+        return id;
     }
 
-    public String getPhonenum() {
-        return phonenum;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setPhonenum(String phonenum) {
-        this.phonenum = phonenum;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getPassword() {
@@ -46,13 +45,37 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", phonenum='" + phonenum + '\'' +
-                '}';
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone_num() {
+        return phone_num;
+    }
+
+    public void setPhone_num(String phone_num) {
+        this.phone_num = phone_num;
+    }
+
+    public String getItem_sets() {
+        return item_sets;
+    }
+
+    public void setItem_sets(String item_sets) {
+        this.item_sets = item_sets;
+    }
+
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "name='" + name + '\'' +
+//                ", password='" + password + '\'' +
+//                ", email='" + email + '\'' +
+//                ", phonenum='" + phonenum + '\'' +
+//                '}';
+//    }
 }

@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Schedule">
-        <activity android:name=".CreatPlan"></activity>
+        <activity android:name=".login.UserInfoActivity"></activity>
+        <activity android:name=".alarm.NotificationMessage" />
+        <activity android:name=".login.LoginActivity" /> <!-- <activity -->
+        <activity android:name=".login.RegisterActivity" /> <!-- <activity -->
         <activity android:name=".ui.guide.GuideActivity" /> <!-- <activity -->
-        <!-- android:name=".GuideActivity" -->
+        <activity android:name=".ui.tasks.AddTaskActivity" /> <!-- android:name=".GuideActivity" -->
         <!-- android:label="@string/app_name" -->
         <!-- android:theme="@style/Theme.Schedule.NoActionBar"> -->
         <activity
@@ -24,6 +27,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".alarm.BootUpReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".alarm.AlarmBrodcast" />
     </application>
 
 </manifest>

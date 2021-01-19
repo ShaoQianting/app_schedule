@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tasks.AddTaskActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="新建日程"
+            android:textSize="30sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ready"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_ready_foreground" />
+
+            <LinearLayout
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ready"
+
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:spinnerMode="dropdown"
+                    android:dropDownWidth="80dp"
+                    android:popupBackground="@color/white"
+                    android:entries="@array/type"
+                    />
+
+<!--                <EditText-->
+<!--                    android:id="@+id/item_type"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@null"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:text="读书"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="30sp" />-->
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_important"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="25dp"
+                android:layout_toRightOf="@id/message"
+                android:background="@drawable/ic_important_no_foreground" />
+
+<!--            <ImageView-->
+<!--                android:id="@+id/item_repeat"-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:layout_marginLeft="180dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_toRightOf="@id/message"-->
+<!--                android:background="@drawable/ic_ready_foreground"-->
+<!--                android:visibility="invisible" />-->
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45px"
+                android:drawableStart="@mipmap/rili"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="  请输入日期                                                             "
+                android:inputType="date" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45px"
+                android:drawableStart="@mipmap/lingdang"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="  请输入时间                                                                    "
+                android:inputType="datetime" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45px"
+                android:drawableStart="@mipmap/jishi"
+                android:hint="  请输入内容                                                                    "
+                 />
+
+        </LinearLayout>
+
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/et_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="45dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:drawableStart="@mipmap/jishi"-->
+<!--            android:hint="请输入内容" />-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+<!--            <EditText-->
+<!--                android:id="@+id/repeat"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="45px"-->
+<!--                android:drawableStart="@drawable/repeat"-->
+<!--                android:focusable="false"-->
+<!--                android:focusableInTouchMode="false"-->
+<!--                android:hint="  请输入内容                                                                    "-->
+<!--                android:inputType="datetime" >-->
+<!--            </EditText>-->
+            <CheckBox
+                android:id="@+id/cb_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:text="是否加入每日计划"
+                />
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape"
+            android:text="提交"
+            android:textColor="@color/black"></Button>
+
+        <Button
+            android:id="@+id/btn_del_task"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape"
+            android:text="删除"
+            android:textColor="@color/black"></Button>
+
+        <TextView
+            android:id="@+id/tv_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="no" />
+        <TextView
+            android:id="@+id/tv_importance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

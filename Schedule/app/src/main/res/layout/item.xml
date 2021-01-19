@@ -4,18 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/parent"
     android:background="@drawable/item_shape">
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/ll_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
         <ImageView
-            android:id="@+id/ready"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/is_ready"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/ic_ready_foreground"
-            />
+            android:background="@drawable/ic_check_no_foreground" />
+
         <LinearLayout
             android:id="@+id/message"
             android:layout_width="wrap_content"
@@ -23,45 +25,73 @@
             android:layout_toRightOf="@id/ready"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/item_date"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="invisible"
+                android:text="7:30"/>
+            <TextView
                 android:id="@+id/item_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="7:30"/>
             <TextView
                 android:id="@+id/item_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
                 android:text="读书"/>
+
             <TextView
                 android:id="@+id/item_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="task"/>
+                android:text="task"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
         </LinearLayout>
+
         <ImageView
-            android:id="@+id/item_important"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_toRightOf="@id/message"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="180dp"
-            android:background="@drawable/ic_ready_foreground"
-            />
-        <ImageView
-            android:id="@+id/item_repeat"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:visibility="invisible"
-            android:layout_toRightOf="@id/message"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="180dp"
-            android:background="@drawable/ic_ready_foreground"
-            />
-    </RelativeLayout>
+            android:id="@+id/is_important"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_finish_no" />
+
+        <TextView
+            android:id="@+id/tv_item_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            android:text="0"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_item_important"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:visibility="gone"/>
+
+
+
+        <!--        <ImageView-->
+<!--            android:id="@+id/item_repeat"-->
+<!--            android:layout_width="76dp"-->
+<!--            android:layout_height="88dp"-->
+<!--            android:layout_marginLeft="174dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_toRightOf="@id/message"-->
+<!--            android:background="@drawable/ic_ready_foreground"-->
+<!--            android:visibility="invisible" />-->
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
